@@ -17,10 +17,17 @@ function nowServing(katzDeliLine) {
     return "There is nobody waiting to be served!"
   }
 }
-// function currentLine(katzDeliLine) {
-//   var currentLineArr = ;
-//   return "The line is currently 1. " + currentLineArr[0] + ", 2. " + etc.;
-// }
+function currentLine(katzDeliLine) {
+  var currentLineStatement = ["The line is currently: "]
+  if (katzDeliLine) {
+    for (var i = 0; i<katzDeliLine.length-1; i++) {
+    var position = i+1 + ". ";
+    currentLineStatement.push(position + katzDeliLine[i]);
+    currentLineStatement.push(",");
+    } 
+  
+  }
+  return "".concat(...currentLineStatement); 
 
 /* describe('deli', () => {
   describe('takeANumber', () => {
