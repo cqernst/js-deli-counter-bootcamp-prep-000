@@ -30,4 +30,5 @@ function currentLine(katzDeliLine) {
   return "".concat(...currentLineStatement);
   } else {
   return "The line is currently empty."
+  }
 }
