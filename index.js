@@ -19,15 +19,18 @@ function nowServing(katzDeliLine) {
 }
 function currentLine(katzDeliLine) {
   var currentLineStatement = ["The line is currently: "]
-  if (katzDeliLine) {
+  if (katzDeliLine[0]) {
     for (var i = 0; i<katzDeliLine.length-1; i++) {
-    var position = i+1 + ". ";
-    currentLineStatement.push(position + katzDeliLine[i]);
+    var position = i+1 + ".";
+    currentLineStatement.push(" " + position + katzDeliLine[i]);
     currentLineStatement.push(",");
-    } 
-  
-  }
-  return "".concat(...currentLineStatement); 
+    }
+  currentLineStatement.pop();
+  currentLineStatement.push(".")
+  return "".concat(...currentLineStatement);
+  } else {
+  return "The line is currently empty."
+}
 
 /* describe('deli', () => {
   describe('takeANumber', () => {
